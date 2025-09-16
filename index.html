@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspectivas Globais - Mídia Alternativa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Perspectivas Globais</h1>
+                    <p>Acompanhe as últimas notícias e análises dos principais canais de mídia alternativa</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-list"></i> Canais</h3>
+                </div>
+                <nav class="channels-nav">
+                    <ul id="channelsList">
+                        <!-- Canais serão carregados dinamicamente -->
+                    </ul>
+                </nav>
+                <div class="sidebar-footer">
+                    <button id="refreshAll" class="btn-refresh">
+                        <i class="fas fa-sync-alt"></i> Atualizar Todos
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar por título, canal ou palavra-chave...">
+                        <button id="clearSearch" class="clear-search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="channelFilter">
+                            <option value="">Todos os canais</option>
+                        </select>
+                        <select id="sortOrder">
+                            <option value="newest">Mais recentes</option>
+                            <option value="oldest">Mais antigos</option>
+                            <option value="channel">Por canal</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="loadingIndicator" class="loading">
+                    <div class="spinner"></div>
+                    <p>Carregando vídeos...</p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Erro ao carregar os vídeos. Tente novamente.</p>
+                </div>
+
+                <!-- Videos Grid -->
+                <div id="videosContainer" class="videos-grid">
+                    <!-- Vídeos serão carregados dinamicamente -->
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button id="loadMoreBtn" class="btn-load-more" style="display: none;">
+                        Carregar mais vídeos
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
